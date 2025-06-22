@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-wxai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A user-friendly WXAI node for n8n, designed to enhance your workflow with Gemini 2.0 Flash model. Supports chat completions with configurable parameters.",
   "keywords": [
     "wxai",
@@ -44,7 +44,7 @@
     "prebuild": "npm run clean",
     "prepack": "npm run build && npm run lint",
     "prepublishOnly": "npm run build && npm run lint",
-    "version": "npm run build && git add -A dist",
+    "version": "npm run build",
     "postversion": "git push && git push --tags"
   },
   "files": [
