@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2025-06-22
+
+### Fixed
+- Fixed missing credential icon issue (wxai.svg 404 error)
+- Improved gulpfile.js to properly copy both node and credential icons to dist directory
+- Enhanced build process to ensure all SVG assets are included in the published package
+
+### Technical Details
+- Updated gulpfile.js to use parallel tasks for copying icons
+- Separated buildNodeIcons and buildCredentialIcons functions
+- Ensured proper directory structure in dist folder
+
 ## [1.0.0] - 2025-06-22
 
 ### Added
