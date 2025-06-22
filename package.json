@@ -1,0 +1,79 @@
+{
+  "name": "n8n-nodes-wxai",
+  "version": "1.0.0",
+  "description": "A user-friendly WXAI node for n8n, designed to enhance your workflow with Gemini 2.0 Flash model. Supports chat completions with configurable parameters.",
+  "keywords": [
+    "wxai",
+    "n8n-community-node-package",
+    "n8n-nodes-wxai",
+    "n8n-nodes",
+    "n8n",
+    "n8n.io",
+    "n8n.io-nodes",
+    "gemini",
+    "gemini-2.0-flash",
+    "ai",
+    "chat",
+    "llm",
+    "artificial-intelligence",
+    "automation",
+    "workflow"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/wxai-community/n8n-nodes-wxai#readme",
+  "author": {
+    "name": "WXAI Community",
+    "email": "community@wxai.dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wxai-community/n8n-nodes-wxai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wxai-community/n8n-nodes-wxai/issues"
+  },
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lint": "eslint \"nodes/**/*.ts\" \"credentials/**/*.ts\"",
+    "lintfix": "eslint \"nodes/**/*.ts\" \"credentials/**/*.ts\" --fix",
+    "test": "npm run build && jest",
+    "test:api": "node test-complete.js",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "prepack": "npm run build && npm run lint",
+    "prepublishOnly": "npm run build && npm run lint",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/WxaiApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Wxai/Wxai.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.6",
+    "@typescript-eslint/parser": "~5.45",
+    "@typescript-eslint/eslint-plugin": "~5.45",
+    "eslint-plugin-n8n-nodes-base": "^1.11.0",
+    "gulp": "^4.0.2",
+    "jest": "^29.7.0",
+    "n8n-workflow": "*",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^29.1.5",
+    "typescript": "~4.8.4"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
